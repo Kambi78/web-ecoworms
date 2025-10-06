@@ -1,18 +1,7 @@
 # web-ecoworms
 Página web de Ecoworms
-🧩 Historias de Usuario (HU3 – HU9)
+🧩 Historias de Usuario (HU5 – HU9)
 
-HU3 – Registrar resultados de biodegradación
-Como coordinador, quiero registrar los resultados de biodegradación de materiales para medir su eficiencia.
-Prioridad: Alta · Esfuerzo: 4 pts · Dep: Registro de actividades, gestión de programas.
-
-HU4 – Visualizar progreso ambiental por escuela
-Como administrador, quiero visualizar el avance de cada escuela mediante gráficos y estadísticas comparativas.
-Prioridad: Alta · Esfuerzo: 3 pts · Dep: Gestión de escuelas y programas ambientales.
-
-HU5 – Registrar y completar actividades asignadas
-Como estudiante o coordinador, quiero registrar y marcar como completadas mis actividades ambientales.
-Prioridad: Media · Esfuerzo: 3 pts · Dep: Creación y asignación de actividades.
 
 HU6 – Generar reportes de resultados ambientales
 Como administrador, quiero generar reportes en PDF o Excel con indicadores de impacto ambiental.
