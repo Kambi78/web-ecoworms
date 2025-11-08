@@ -1,0 +1,144 @@
+.actividad-nueva-page {
+  background-color: #e8f9e1;
+  min-height: 100vh;
+  padding: 2rem 3rem;
+  font-family: "Roboto", system-ui, sans-serif;
+  color: #111827;
+  box-sizing: border-box;
+}
+
+.actividad-header {
+  max-width: 1100px;
+  margin: 0 auto 1.2rem auto;
+}
+
+.actividad-header h1 {
+  margin: 0;
+  font-size: 2.2rem;
+  font-weight: 700;
+}
+
+.actividad-card {
+  max-width: 1100px;
+  margin: 0 auto;
+  background-color: #ffffff;
+  border-radius: 8px;
+  border: 1px solid #cfd8cc;
+  box-shadow: 0 2px 4px #0000001a;
+  padding: 1.5rem 1.75rem 1.7rem;
+}
+
+.card-title {
+  margin: 0 0 1rem 0;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+form {
+  width: 100%;
+}
+
+.grid-campos {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.campo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.campo label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #374151;
+}
+
+.campo-input {
+  height: 32px;
+  border-radius: 2px;
+  border: none;
+  background-color: #e4e4e4;
+  padding: 0 0.6rem;
+  font-size: 0.85rem;
+  outline: none;
+}
+
+.campo-input.ng-invalid.ng-touched {
+  background-color: #fee2e2;
+  border: 1px solid #fca5a5;
+}
+
+.alert {
+  margin-bottom: 0.9rem;
+  padding: 0.5rem 0.75rem;
+  background-color: #fee2e2;
+  color: #b91c1c;
+  border-radius: 4px;
+  border: 1px solid #fecaca;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.error-msg {
+  margin-top: 0.15rem;
+  font-size: 0.75rem;
+  color: #b91c1c;
+  background-color: #fee2e2;
+  padding: 0.15rem 0.3rem;
+  border-radius: 3px;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.btn-oscuro {
+  background-color: #111827;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  padding: 0.6rem 1.6rem;
+  font-size: 0.9rem;
+  cursor: pointer;
+  box-shadow: 0 2px 4px #00000033;
+  transition: opacity 0.15s ease, transform 0.05s ease;
+}
+
+.btn-oscuro:hover {
+  opacity: 0.93;
+  transform: translateY(-1px);
+}
+
+.toast {
+  position: fixed;
+  right: 1.5rem;
+  bottom: 1.5rem;
+  background-color: #16a34a;
+  color: #ffffff;
+  padding: 0.75rem 1.2rem;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  box-shadow: 0 4px 10px #00000066;
+  z-index: 1000;
+}
+
+@media (max-width: 1024px) {
+  .grid-campos {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .actividad-nueva-page {
+    padding: 1.5rem 1.25rem;
+  }
+
+  .grid-campos {
+    grid-template-columns: 1fr;
+  }
+}

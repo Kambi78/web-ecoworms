@@ -1,0 +1,83 @@
+<section class="nuevo-resultado-page">
+  <h1 class="titulo">Crear Resultado</h1>
+
+  <form class="card-form" (ngSubmit)="guardar()" #f="ngForm">
+    <div class="fila">
+      <div class="campo">
+        <label>Proyecto</label>
+        <input
+          type="text"
+          name="proyecto"
+          required
+          [(ngModel)]="resultado.proyecto"
+        />
+      </div>
+
+      <div class="campo">
+        <label>Escuela</label>
+        <input
+          type="text"
+          name="escuela"
+          [(ngModel)]="resultado.escuela"
+        />
+      </div>
+    </div>
+
+    <div class="fila">
+      <div class="campo">
+        <label>Fecha</label>
+        <input
+          type="date"
+          name="fecha"
+          required
+          [(ngModel)]="resultado.fecha"
+        />
+      </div>
+
+      <div class="campo">
+        <label>% Reducción</label>
+        <input
+          type="number"
+          name="reduccion"
+          min="0"
+          max="100"
+          [(ngModel)]="resultado.reduccion"
+        />
+      </div>
+    </div>
+
+    <div class="campo">
+      <label>Observaciones</label>
+      <textarea
+        rows="3"
+        name="observaciones"
+        [(ngModel)]="resultado.observaciones">
+      </textarea>
+    </div>
+
+    <div class="acciones">
+      <button type="submit" class="btn-oscuro">Guardar</button>
+      <button type="button" class="btn-secundario" (click)="cancelar()">
+        Cancelar
+      </button>
+    </div>
+  </form>
+
+  <!-- TOAST / OVERLAY DE ÉXITO -->
+  <div class="toast-overlay" *ngIf="mostrarToast">
+    <div class="toast-card">
+      <div class="toast-icon">✔</div>
+      <h2>Resultado guardado</h2>
+      <p>El resultado se registró correctamente.</p>
+
+      <div class="toast-actions">
+        <button class="btn-oscuro" (click)="irAResultadosDesdeToast()">
+          Ir a resultados
+        </button>
+        <button class="btn-secundario" (click)="nuevoRegistro()">
+          Registrar otro
+        </button>
+      </div>
+    </div>
+  </div>
+</section>

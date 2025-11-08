@@ -1,0 +1,67 @@
+<section class="detalle-page" *ngIf="programa; else notFound">
+  <!-- Título + botón nuevo programa -->
+  <header class="detalle-header">
+    <h1 class="detalle-titulo">{{ programa.nombre }}</h1>
+    <button class="btn-oscuro btn-nuevo" (click)="irANuevoPrograma()">
+      + Nuevo Programa
+    </button>
+  </header>
+
+  <!-- Tarjeta principal -->
+  <section class="detalle-card">
+    <!-- fila organizador + botones -->
+    <div class="detalle-card-header">
+      <div class="organizador-info">
+        <div class="avatar-icon">
+          <span class="avatar-emoji">👤</span>
+        </div>
+        <div class="organizador-texto">
+          <span class="organizador-label">Organizador:</span>
+          <span class="organizador-nombre">
+            {{ programa.organizador || '—' }}
+          </span>
+        </div>
+      </div>
+
+      <div class="card-actions">
+        <button class="btn-oscuro" (click)="editarPrograma()">Editar Programa</button>
+        <button class="btn-oscuro btn-danger" (click)="eliminar()">
+          Eliminar Programa
+        </button>
+      </div>
+    </div>
+
+    <!-- “Tabla” de datos -->
+    <div class="detalle-tabla">
+      <div class="fila encabezado">
+        <div>Escuela</div>
+        <div>Fecha de inicio</div>
+        <div>Fecha de fin</div>
+      </div>
+      <div class="fila">
+        <div>{{ programa.escuela || '—' }}</div>
+        <div>{{ programa.fechaInicio || '—' }}</div>
+        <div>{{ programa.fechaFin || '—' }}</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tarjeta de descripción -->
+  <section class="detalle-descripcion">
+    <h2 class="detalle-descripcion-titulo">Descripción</h2>
+    <p class="detalle-descripcion-texto">
+      {{ programa.descripcion || 'Sin descripción' }}
+    </p>
+  </section>
+</section>
+
+<ng-template #notFound>
+  <section class="detalle-page">
+    <header class="detalle-header">
+      <h1 class="detalle-titulo">Programa no encontrado</h1>
+    </header>
+    <div class="acciones-detalle">
+      <button class="btn-oscuro" (click)="volver()">Volver</button>
+    </div>
+  </section>
+</ng-template>

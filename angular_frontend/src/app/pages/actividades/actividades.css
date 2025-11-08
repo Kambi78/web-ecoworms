@@ -1,0 +1,206 @@
+/* CONTENEDOR GENERAL DE LA PÁGINA */
+.actividades-page {
+  min-height: 100vh;
+  background-color: #e8f7e2;      /* verde muy claro del fondo */
+  padding: 2rem 3rem;
+  font-family: "Roboto", system-ui, sans-serif;
+  box-sizing: border-box;
+  color: #1a1a1a;
+}
+
+
+.actividades-header {
+  margin-bottom: 1.5rem;
+}
+
+.actividades-header h1 {
+  font-family: "Playfair Display", Georgia, serif;
+  margin: 0;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.actividades-layout {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+/* TARJETAS DE FILTROS E INDICADORES */
+.card-filtros,
+.card-indicadores {
+  background-color: #f7fbf3;
+  border-radius: 8px;
+  border: 1px solid #d5e3cf;
+  padding: 1.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.06);
+}
+
+/* TÍTULOS DE LAS TARJETAS */
+.card-filtros h2,
+.card-indicadores h2 {
+  margin: 0 0 1rem 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+/* CAMPOS DE FILTRO */
+.filtro-campo {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 0.75rem;
+}
+
+.filtro-campo label {
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin-bottom: 0.25rem;
+}
+
+.filtro-input {
+  width: 100%;
+  border-radius: 4px;
+  border: none;
+  background-color: #e2f1dd;
+  padding: 0.5rem 0.75rem;
+  font-size: 0.9rem;
+  box-sizing: border-box;
+}
+
+/* CABECERA DE INDICADORES (+ BOTÓN REGISTRAR) */
+.indicadores-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+/* CAMPOS DE INDICADORES */
+.indicador-campo {
+  margin-bottom: 0.75rem;
+}
+
+.indicador-campo label {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin-bottom: 0.25rem;
+}
+
+.indicador-input {
+  background-color: #e2f1dd;
+  border-radius: 4px;
+  padding: 0.5rem 0.75rem;
+  font-size: 0.9rem;
+}
+
+/* TABLA DE ACTIVIDADES */
+.tabla-wrapper {
+  margin-top: 1rem;
+}
+
+.tabla-wrapper h2 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+
+.tabla-actividades {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #ffffff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.06);
+}
+
+.tabla-actividades thead {
+  background-color: #f4f7f1;
+}
+
+.tabla-actividades th,
+.tabla-actividades td {
+  padding: 0.6rem 0.8rem;
+  font-size: 0.9rem;
+  text-align: left;
+}
+
+.tabla-actividades th {
+  font-weight: 600;
+}
+
+.tabla-actividades tbody tr:nth-child(even) {
+  background-color: #fafdf8;
+}
+
+/* FILA SIN REGISTROS */
+.tabla-actividades tbody tr td[colspan] {
+  text-align: center;
+  font-style: italic;
+}
+
+/* BOTONES INFERIORES */
+.acciones-inferiores {
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-end;
+  margin-top: 1.5rem;
+}
+
+.btn-oscuro {
+  background-color: #15171a;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  padding: 0.6rem 1.3rem;
+  font-size: 0.9rem;
+  cursor: pointer;
+  min-width: 170px;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
+  transition: opacity 0.15s ease, transform 0.1s ease;
+}
+
+.btn-oscuro:hover {
+  opacity: 0.92;
+  transform: translateY(-1px);
+}
+
+/* RESPONSIVE */
+@media (max-width: 992px) {
+  .actividades-page {
+    padding: 1.5rem;
+  }
+
+  .actividades-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .indicadores-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+
+  .acciones-inferiores {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .btn-oscuro {
+    width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .actividades-header h1 {
+    font-size: 1.4rem;
+  }
+
+  .tabla-actividades th,
+  .tabla-actividades td {
+    font-size: 0.8rem;
+    padding: 0.45rem 0.5rem;
+  }
+}

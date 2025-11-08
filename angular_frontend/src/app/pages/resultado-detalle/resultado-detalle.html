@@ -1,0 +1,91 @@
+<section *ngIf="resultado as r; else sinDatos" class="resultado-detalle-page">
+  <header class="detalle-topbar">
+    <button class="btn-link-volver" (click)="volver()">← Volver a resultados</button>
+  </header>
+
+  <section class="detalle-hero">
+    <h1 class="detalle-titulo">Proyecto: {{ r.proyecto }}</h1>
+    <p class="detalle-subtitulo">
+      Escuela: {{ r.escuela }} | Fase: Implementación | Periodo: {{ r.fecha }}
+    </p>
+    <button class="btn-verde">Nuevo resultado +</button>
+  </section>
+
+  <section class="detalle-layout">
+    <div class="detalle-grafico">
+      <h2>Gráfico de barras apilado del % de reducción mensual</h2>
+      <div class="grafico-placeholder">
+        <span>📊 Aquí irá el gráfico de reducción mensual</span>
+      </div>
+    </div>
+
+    <div class="detalle-tabla-wrapper">
+      <h2 class="detalle-tabla-titulo">
+        Tabla de últimos resultados con fecha, porcentaje y observaciones.
+      </h2>
+
+      <table class="detalle-tabla">
+        <thead>
+        <tr>
+          <th>Fecha</th>
+          <th>% Reducción</th>
+          <th>Observaciones</th>
+          <th>Registrado por</th>
+          <th>Estado</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let item of ultimosResultados">
+          <td>{{ item.fecha }}</td>
+          <td>{{ item.reduccion }}%</td>
+          <td>{{ item.observaciones }}</td>
+          <td>{{ item.registradoPor || '—' }}</td>
+          <td>{{ item.estado || 'Pendiente' }}</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="detalle-metricas">
+    <h2>Indicadores KPI del Proyecto</h2>
+    <div class="metricas-grid">
+      <div class="kpi-card">
+        <p class="kpi-label">Promedio de reducción</p>
+        <h3 class="kpi-valor">{{ promedioReduccion }}%</h3>
+      </div>
+
+      <div class="kpi-card">
+        <p class="kpi-label">Último resultado</p>
+        <h3 class="kpi-valor">{{ ultimoResultado?.reduccion || 0 }}%</h3>
+        <p class="kpi-subvalor">{{ ultimoResultado?.fecha || '—' }}</p>
+      </div>
+
+      <div class="kpi-card">
+        <p class="kpi-label">Residuos evitados</p>
+        <h3 class="kpi-valor">{{ residuosEvitados }} kg</h3>
+      </div>
+
+      <div class="kpi-card">
+        <p class="kpi-label">Actividades completadas</p>
+        <h3 class="kpi-valor">{{ actividadesCompletadas }}%</h3>
+      </div>
+    </div>
+
+    <div class="grafico-lineal">
+      <h2>Gráfico de progreso acumulado lineal</h2>
+      <div class="grafico-placeholder">
+        <span>📈 Aquí irá el gráfico lineal de progreso acumulado</span>
+      </div>
+    </div>
+  </section>
+</section>
+
+<ng-template #sinDatos>
+  <section class="resultado-detalle-page">
+    <header class="detalle-topbar">
+      <button class="btn-link-volver" (click)="volver()">← Volver a resultados</button>
+    </header>
+    <h2>No se encontró información del resultado.</h2>
+  </section>
+</ng-template>

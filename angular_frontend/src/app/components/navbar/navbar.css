@@ -1,0 +1,78 @@
+.nav {
+  background: #d9f0d7;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 12px 32px;
+  gap: 32px;
+}
+
+.brand-logo {
+  height: 100px;
+  width: auto;
+}
+
+.links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+  flex: 1;
+}
+
+.links a {
+  text-decoration: none;
+  font-family: "Times New Roman", serif;
+  color: #1b2c1b;
+  font-size: 1rem;
+}
+
+.links a.active {
+  font-weight: bold;
+  border-bottom: 2px solid #1b2c1b;
+  padding-bottom: 3px;
+}
+
+.btn-account {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  border: 1px solid #1b2c1b;
+  border-radius: 10px;
+  padding: 8px 18px;
+  font-family: "Times New Roman", serif;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.btn-account:hover {
+  background: rgba(0, 0, 0, 0.05);
+}
+
+.icon-user {
+  font-size: 1.1rem;
+}
+
+@media (max-width: 900px) {
+  .nav-inner {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .links {
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  .btn-account {
+    order: 3;
+  }
+}

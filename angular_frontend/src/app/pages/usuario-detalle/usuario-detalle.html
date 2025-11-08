@@ -1,0 +1,47 @@
+<section class="usuario-detalle-page" *ngIf="usuario as u">
+  <!-- Top bar con botón volver -->
+  <header class="detalle-topbar">
+    <button class="btn-link-volver" (click)="volver()">
+      ← Volver al dashboard de usuarios
+    </button>
+  </header>
+
+  <!-- Tarjeta central -->
+  <div class="detalle-wrapper">
+    <div class="detalle-card">
+      <h1 class="detalle-titulo">Ficha de Usuario</h1>
+
+      <div class="detalle-row">
+        <span class="detalle-label">Nombre</span>
+        <span class="detalle-valor">{{ u.nombre }}</span>
+      </div>
+
+      <div class="detalle-row">
+        <span class="detalle-label">Apellido</span>
+        <span class="detalle-valor">{{ u.apellido }}</span>
+      </div>
+
+      <div class="detalle-row">
+        <span class="detalle-label">Email</span>
+        <span class="detalle-valor">{{ u.email }}</span>
+      </div>
+
+      <div class="detalle-row">
+        <span class="detalle-label">Escuela</span>
+        <span class="detalle-valor">{{ u.escuela }}</span>
+      </div>
+
+      <div class="detalle-row detalle-row-rol">
+        <span class="detalle-label">Rol</span>
+        <span class="detalle-valor rol-badge">{{ u.rol }}</span>
+        <button class="btn-rol" (click)="editarRol()">Editar</button>
+      </div>
+
+      <div class="detalle-actions">
+        <button class="btn-historial" (click)="verHistorial()">
+          Historial de cambios de rol
+        </button>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,144 @@
+<section class="actividades-page">
+  <!-- Título -->
+  <header class="actividades-header">
+    <h1>Progreso del Programa: {{ programaNombre }}</h1>
+  </header>
+
+  <section class="actividades-layout">
+    <!-- Filtros -->
+    <div class="card-filtros">
+      <h2>Filtro</h2>
+
+      <div class="filtro-campo">
+        <label>Programa</label>
+        <select
+          class="filtro-input"
+          [(ngModel)]="filtros.programa"
+          (change)="aplicarFiltros()"
+          name="filtroPrograma">
+          <option value="Todos">Todos</option>
+          <option [value]="programaNombre">{{ programaNombre }}</option>
+        </select>
+      </div>
+
+      <div class="filtro-campo">
+        <label>Fecha de actividad</label>
+        <input
+          type="date"
+          class="filtro-input"
+          [(ngModel)]="filtros.fecha"
+          (change)="aplicarFiltros()"
+          name="filtroFecha" />
+      </div>
+
+      <div class="filtro-campo">
+        <label>Estado</label>
+        <select
+          class="filtro-input"
+          [(ngModel)]="filtros.estado"
+          (change)="aplicarFiltros()"
+          name="filtroEstado">
+          <option value="Todos">Todos</option>
+          <option value="Pendiente">Pendiente</option>
+          <option value="Completado">Completado</option>
+        </select>
+      </div>
+
+      <div class="filtro-campo">
+        <label>Equipo</label>
+        <select
+          class="filtro-input"
+          [(ngModel)]="filtros.equipo"
+          (change)="aplicarFiltros()"
+          name="filtroEquipo">
+          <option value="Todos">Todos</option>
+          <option *ngFor="let eq of equiposDisponibles" [value]="eq">
+            {{ eq }}
+          </option>
+        </select>
+      </div>
+    </div>
+
+    <div class="card-indicadores">
+      <div class="indicadores-header">
+        <h2>Indicadores</h2>
+        <button class="btn-oscuro" (click)="registrarActividad()">
+          + Registrar Actividad
+        </button>
+      </div>
+
+      <div class="indicador-campo">
+        <label>Total de actividades registradas</label>
+        <div class="indicador-input">
+          {{ indicadores.totalActividades }}
+        </div>
+      </div>
+
+      <div class="indicador-campo">
+        <label>Kg acum</label>
+        <div class="indicador-input">
+          {{ indicadores.kgAcum }}
+        </div>
+      </div>
+
+      <div class="indicador-campo">
+        <label>N° equipos participantes</label>
+        <div class="indicador-input">
+          {{ indicadores.equiposParticipantes }}
+        </div>
+      </div>
+
+      <div class="indicador-campo">
+        <label>Estado Programa</label>
+        <div class="indicador-input">
+          {{ indicadores.estadoPrograma }}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="tabla-wrapper">
+    <h2>Tabla de actividades</h2>
+
+    <table class="tabla-actividades">
+      <thead>
+      <tr>
+        <th>Fecha</th>
+        <th>Estudiante</th>
+        <th>Equipo</th>
+        <th>PET</th>
+        <th>Papel</th>
+        <th>Orgánicos</th>
+        <th>Total Kg</th>
+        <th>A.Estado</th>
+        <th>Observaciones</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let a of actividadesFiltradas">
+        <td>{{ a.fecha }}</td>
+        <td>{{ a.estudiante }}</td>
+        <td>{{ a.equipo }}</td>
+        <td>{{ a.pet }}</td>
+        <td>{{ a.papel }}</td>
+        <td>{{ a.organicos }}</td>
+        <td>{{ a.totalKg }}</td>
+        <td>{{ a.estado }}</td>
+        <td>{{ a.observaciones }}</td>
+      </tr>
+      <tr *ngIf="actividadesFiltradas.length === 0">
+        <td colspan="9">No hay actividades para los filtros seleccionados.</td>
+      </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="acciones-inferiores">
+    <button class="btn-oscuro" (click)="irAVisualizaciones()">
+      Visualizaciones gráficas
+    </button>
+    <button class="btn-oscuro" (click)="irAEditarActividad()">
+      Editar actividad
+    </button>
+  </section>
+</section>

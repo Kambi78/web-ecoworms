@@ -1,0 +1,71 @@
+<section class="resultados-page">
+  <header class="resultados-header">
+    <h1 class="resultados-titulo">Resultados de Biodegradación</h1>
+
+    <div class="resultados-filtros">
+      <div class="filtro-group">
+        <label for="proyecto">Proyecto</label>
+        <select
+          id="proyecto"
+          [(ngModel)]="filtroProyecto"
+          (change)="aplicarFiltros()"
+        >
+          <option value="Todos">Todos</option>
+          <option *ngFor="let p of proyectosDisponibles" [value]="p">
+            {{ p }}
+          </option>
+        </select>
+      </div>
+
+      <div class="filtro-group">
+        <label for="fecha">Fecha</label>
+        <input
+          id="fecha"
+          type="date"
+          [(ngModel)]="filtroFecha"
+          (ngModelChange)="aplicarFiltros()"
+        />
+      </div>
+
+      <button type="button" class="btn-oscuro" (click)="irANuevoResultado()">
+        Registrar resultados +
+      </button>
+    </div>
+  </header>
+
+  <div class="tabla-wrapper">
+    <table class="tabla-resultados">
+      <thead>
+      <tr>
+        <th>Fecha</th>
+        <th>Proyecto</th>
+        <th>Escuela</th>
+        <th>% Reducción</th>
+        <th>Observaciones</th>
+        <th></th>
+      </tr>
+      </thead>
+
+      <tbody>
+      <tr *ngFor="let r of resultadosFiltrados">
+        <td>{{ r.fecha }}</td>
+        <td>{{ r.proyecto }}</td>
+        <td>{{ r.escuela }}</td>
+        <td>{{ r.reduccion }}%</td>
+        <td>{{ r.observaciones }}</td>
+        <td class="col-detalle">
+          <button type="button" class="btn-link" (click)="verDetalle(r)">
+            Ver detalle
+          </button>
+        </td>
+      </tr>
+
+      <tr *ngIf="resultadosFiltrados.length === 0">
+        <td colspan="6" class="sin-datos">
+          No hay resultados para los filtros seleccionados.
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</section>

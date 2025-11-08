@@ -1,0 +1,77 @@
+<section class="usuarios-page">
+  <header class="usuarios-header">
+    <h1 class="usuarios-titulo">Dashboard de Usuarios</h1>
+
+    <div class="usuarios-filtros">
+      <!-- Filtro Escuela -->
+      <div class="filtro-group">
+        <label for="escuela">Escuela</label>
+        <select
+          id="escuela"
+          [(ngModel)]="filtroEscuela"
+          (ngModelChange)="aplicarFiltros()"
+        >
+          <option value="Todas">Todas</option>
+          <option *ngFor="let e of escuelasDisponibles" [value]="e">
+            {{ e }}
+          </option>
+        </select>
+      </div>
+
+      <!-- Filtro Rol -->
+      <div class="filtro-group">
+        <label for="rol">Rol</label>
+        <select
+          id="rol"
+          [(ngModel)]="filtroRol"
+          (ngModelChange)="aplicarFiltros()"
+        >
+          <option value="Todos">Todos</option>
+          <option *ngFor="let r of rolesDisponibles" [value]="r">
+            {{ r }}
+          </option>
+        </select>
+      </div>
+
+      <button class="btn-oscuro" (click)="irACrearUsuario()">
+        Crear Usuario +
+      </button>
+    </div>
+  </header>
+
+  <div class="tabla-wrapper">
+    <table class="tabla-usuarios">
+      <thead>
+      <tr>
+        <th>Nombres</th>
+        <th>Apellidos</th>
+        <th>Email</th>
+        <th>Rol</th>
+        <th>Escuela</th>
+        <th></th>
+      </tr>
+      </thead>
+
+      <tbody>
+      <tr *ngFor="let u of usuariosFiltrados">
+        <td>{{ u.nombre }}</td>
+        <td>{{ u.apellido }}</td>
+        <td>{{ u.email }}</td>
+        <td>{{ u.rol }}</td>
+        <td>{{ u.escuela }}</td>
+        <td class="col-detalle">
+          <button class="btn-link" (click)="verDetalle(u)">
+            Ver ficha
+          </button>
+        </td>
+      </tr>
+
+      <tr *ngIf="usuariosFiltrados.length === 0">
+        <td colspan="6" class="sin-datos">
+          No hay usuarios para los filtros seleccionados.
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</section>

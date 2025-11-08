@@ -1,0 +1,24 @@
+<header class="nav">
+  <div class="nav-inner">
+    <a class="brand" routerLink="/">
+      <img src="assets/img/logo-verde-ecoworms.png" alt="EcoWorms" class="brand-logo" />
+    </a>
+
+    <nav class="links">
+      <a routerLink="/home" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Inicio</a>
+      <a routerLink="/proyectos" routerLinkActive="active">Proyectos</a>
+      <a routerLink="/administracion" routerLinkActive="active">Programas</a>
+      <a routerLink="/actividades" routerLinkActive="active">Actividades</a>
+      <a routerLink="/resultados" routerLinkActive="active">Resultados</a>
+      <a routerLink="/usuarios" routerLinkActive="active">Usuarios</a>
+      <a routerLink="/contacto" routerLinkActive="active">Contacto</a>
+      <a routerLink="/educacion" routerLinkActive="active">Nosotros</a>
+      <a routerLink="/comunidad" routerLinkActive="active">Opiniones</a>
+    </nav>
+
+    <button class="btn-account" type="button">
+      <span class="icon-user">👤</span>
+      <span>Mi cuenta</span>
+    </button>
+  </div>
+</header>

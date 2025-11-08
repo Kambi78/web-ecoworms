@@ -1,0 +1,161 @@
+.usuarios-page {
+  padding: 2.5rem 6rem 3rem;
+  background: #f4faef;
+  min-height: calc(100vh - 80px);
+  box-sizing: border-box;
+}
+
+.usuarios-header {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.usuarios-titulo {
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 2.4rem;
+  color: #243822;
+  margin: 0;
+}
+
+.usuarios-filtros {
+  display: flex;
+  align-items: flex-end;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.filtro-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.filtro-group label {
+  font-size: 0.9rem;
+  color: #415b3a;
+}
+
+.filtro-group select {
+  min-width: 180px;
+  padding: 0.55rem 0.75rem;
+  border-radius: 0.4rem;
+  border: 1px solid #9fbd95;
+  background: #ffffff;
+  font-size: 0.95rem;
+  color: #2d3c2a;
+  outline: none;
+  transition: box-shadow 0.15s, border-color 0.15s;
+}
+
+.filtro-group select:focus {
+  border-color: #4a7c42;
+  box-shadow: 0 0 0 3px rgba(74, 124, 66, 0.18);
+}
+
+.btn-oscuro {
+  margin-left: auto;
+  background-color: #2f6f2f;
+  color: #ffffff;
+  border: none;
+  border-radius: 0.6rem;
+  padding: 0.7rem 1.6rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.18);
+  transition: background-color 0.18s, transform 0.1s, box-shadow 0.18s;
+  white-space: nowrap;
+}
+
+.btn-oscuro:hover {
+  background-color: #255824;
+  transform: translateY(-1px);
+  box-shadow: 0 9px 16px rgba(0, 0, 0, 0.24);
+}
+
+.tabla-wrapper {
+  background: #ffffff;
+  border-radius: 0.8rem;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+}
+
+.tabla-usuarios {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.96rem;
+}
+
+.tabla-usuarios thead {
+  background-color: #e8f5de;
+}
+
+.tabla-usuarios th,
+.tabla-usuarios td {
+  padding: 0.9rem 1.2rem;
+  text-align: left;
+}
+
+.tabla-usuarios th {
+  font-weight: 600;
+  color: #2b3d27;
+  border-bottom: 1px solid #d0e2c7;
+}
+
+.tabla-usuarios tbody tr:nth-child(even) {
+  background-color: #f7fbf3;
+}
+
+.tabla-usuarios tbody tr:hover {
+  background-color: #ecf7e5;
+}
+
+.col-detalle {
+  text-align: right;
+  white-space: nowrap;
+}
+
+.btn-link {
+  background: none;
+  border: none;
+  color: #1e5bb8;
+  cursor: pointer;
+  font-size: 0.9rem;
+  text-decoration: underline;
+  padding: 0;
+}
+
+.btn-link:hover {
+  color: #163f80;
+}
+
+.sin-datos {
+  text-align: center;
+  padding: 1.5rem;
+  color: #6c7a64;
+  font-style: italic;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .usuarios-page {
+    padding: 1.5rem;
+  }
+
+  .usuarios-filtros {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .btn-oscuro {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .tabla-usuarios th,
+  .tabla-usuarios td {
+    padding: 0.7rem 0.8rem;
+  }
+}

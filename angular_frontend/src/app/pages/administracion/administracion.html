@@ -1,0 +1,28 @@
+<section class="programas-page">
+  <header class="page-head">
+    <h1 class="page-title">Programas Ambientales</h1>
+
+    <button class="btn-dark" (click)="irACrearPrograma()">
+      Crear programa
+    </button>
+  </header>
+
+  <section class="cards-grid">
+    <article class="prog-card" *ngFor="let p of programas()">
+      <div class="card-top">
+        <div class="avatar-circle">👤</div>
+      </div>
+
+      <div class="card-body">
+        <h2 class="prog-name">"{{ p.nombre }}"</h2>
+        <p>{{ p.descripcion }}</p>
+      </div>
+
+      <div class="card-bottom">
+        <button class="btn-outline" [routerLink]="['/programa', p.id]">
+          Ver más
+        </button>
+      </div>
+    </article>
+  </section>
+</section>

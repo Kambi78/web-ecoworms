@@ -1,0 +1,79 @@
+<section class="form-page">
+  <div class="form-header">
+    <h1>Súmate al cambio</h1>
+    <p>“Con tu proyecto y los gusanos de cera, juntos transformamos residuos en soluciones sostenibles.”</p>
+  </div>
+
+  <form (ngSubmit)="guardar()" #formulario="ngForm" class="form-container">
+    <div class="form-grid">
+
+      <div class="form-group">
+        <label for="nombre">Nombre del programa</label>
+        <input
+          type="text"
+          id="nombre"
+          name="nombre"
+          [(ngModel)]="programa.nombre"
+          placeholder="Separación de residuos plásticos"
+          required
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="organizador">Organizador</label>
+        <input
+          type="text"
+          id="organizador"
+          name="organizador"
+          [(ngModel)]="programa.organizador"
+          placeholder="Pablo Aguirre"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="escuela">Escuela</label>
+        <input
+          type="text"
+          id="escuela"
+          name="escuela"
+          [(ngModel)]="programa.escuela"
+          placeholder="Saco Oliveros"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="fechaInicio">Fecha de inicio</label>
+        <input
+          type="date"
+          id="fechaInicio"
+          name="fechaInicio"
+          [(ngModel)]="programa.fechaInicio"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="fechaFin">Fecha de fin</label>
+        <input
+          type="date"
+          id="fechaFin"
+          name="fechaFin"
+          [(ngModel)]="programa.fechaFin"
+        />
+      </div>
+
+      <div class="form-group form-full">
+        <label for="descripcion">Descripción del programa</label>
+        <textarea
+          id="descripcion"
+          name="descripcion"
+          [(ngModel)]="programa.descripcion"
+          rows="3"
+          placeholder="Campaña educativa sobre separación y reciclaje de plásticos..."
+        ></textarea>
+      </div>
+
+    </div>
+
+    <button type="submit" class="btn-dark">Guardar</button>
+  </form>
+</section>

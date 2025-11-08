@@ -1,0 +1,164 @@
+.graficos-page {
+  min-height: 100vh;
+  background-color: #eef5ea;
+  padding: 2rem;
+  box-sizing: border-box;
+  font-family: 'Roboto', system-ui, sans-serif;
+  color: #1a1a1a;
+}
+
+.graficos-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.graficos-header h1 {
+  margin: 0;
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+.graficos-layout {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.5rem;
+}
+
+.card-grafico {
+  background-color: #ffffff;
+  border-radius: 6px;
+  border: 1px solid #cfd8cc;
+  box-shadow: 0 2px 4px #0000001a;
+  padding: 1.5rem;
+}
+
+.card-grafico h2 {
+  margin: 0 0 1rem 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+/* Leyenda */
+.chart-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.pill {
+  padding: 0.25rem 0.6rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: #ffffff;
+}
+
+.pill-pet {
+  background-color: #00bcd4;
+}
+
+.pill-papel {
+  background-color: #4caf50;
+}
+
+.pill-organicos {
+  background-color: #ff9800;
+}
+
+.pill-otros {
+  background-color: #673ab7;
+}
+
+/* Barras */
+.chart-bars {
+  display: flex;
+  align-items: flex-end;
+  gap: 1rem;
+  height: 260px;
+  padding: 0 0.5rem 0.5rem;
+  border-top: 1px solid #e0e0e0;
+}
+
+.bar-item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.bar-wrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
+}
+
+.bar-total {
+  width: 100%;
+  border-radius: 4px 4px 0 0;
+  background: linear-gradient(
+    180deg,
+    #00bcd4 0%,
+    #4caf50 40%,
+    #ff9800 80%
+  );
+  transition: height 0.3s ease;
+}
+
+.bar-label {
+  margin-top: 0.4rem;
+  font-size: 0.75rem;
+  text-align: center;
+}
+
+/* Placeholder del gráfico de líneas */
+.chart-placeholder {
+  border-radius: 4px;
+  background: repeating-linear-gradient(
+    135deg,
+    #f5f5f5,
+    #f5f5f5 6px,
+    #e0e0e0 6px,
+    #e0e0e0 12px
+  );
+  min-height: 260px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+  color: #555;
+  text-align: center;
+}
+
+.sin-datos {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+}
+
+/* Botón oscuro reutilizado */
+.btn-oscuro {
+  background-color: #1f1f1f;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  padding: 0.6rem 1.4rem;
+  font-size: 0.9rem;
+  cursor: pointer;
+  box-shadow: 0 2px 4px #00000033;
+  transition: opacity 0.15s ease, transform 0.1s ease;
+}
+
+.btn-oscuro:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+@media (max-width: 900px) {
+  .graficos-layout {
+    grid-template-columns: 1fr;
+  }
+}

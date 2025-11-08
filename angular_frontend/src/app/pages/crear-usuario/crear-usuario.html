@@ -1,0 +1,82 @@
+<section class="crear-usuario-page">
+  <h1 class="titulo">Registro de Usuario</h1>
+
+  <form class="formulario" (ngSubmit)="guardar()">
+    <div class="campo">
+      <label for="nombre">Nombre</label>
+      <input
+        id="nombre"
+        type="text"
+        [(ngModel)]="usuario.nombre"
+        name="nombre"
+        required
+      />
+    </div>
+
+    <div class="campo">
+      <label for="apellido">Apellido</label>
+      <input
+        id="apellido"
+        type="text"
+        [(ngModel)]="usuario.apellido"
+        name="apellido"
+        required
+      />
+    </div>
+
+    <div class="campo">
+      <label for="email">Email</label>
+      <input
+        id="email"
+        type="email"
+        [(ngModel)]="usuario.email"
+        name="email"
+        required
+      />
+      <div *ngIf="emailError" class="error-email">
+        {{ emailError }}
+      </div>
+    </div>
+
+    <div class="campo">
+      <label for="rol">Rol</label>
+      <select
+        id="rol"
+        [(ngModel)]="usuario.rol"
+        name="rol"
+        required
+      >
+        <option value="" disabled selected>Selecciona un rol</option>
+        <option *ngFor="let r of roles" [value]="r">{{ r }}</option>
+      </select>
+    </div>
+
+    <div class="campo">
+      <label for="escuela">Escuela</label>
+      <select
+        id="escuela"
+        [(ngModel)]="usuario.escuela"
+        name="escuela"
+        required
+      >
+        <option value="" disabled selected>Selecciona una escuela</option>
+        <option *ngFor="let e of escuelas" [value]="e">
+          {{ e }}
+        </option>
+      </select>
+    </div>
+
+    <div *ngIf="formError" class="error-form">
+      {{ formError }}
+    </div>
+
+    <div class="acciones">
+      <button type="button" class="btn-secundario" (click)="cancelar()">
+        Cancelar
+      </button>
+      <button type="submit" class="btn-primario">
+        Guardar
+      </button>
+    </div>
+  </form>
+</section>

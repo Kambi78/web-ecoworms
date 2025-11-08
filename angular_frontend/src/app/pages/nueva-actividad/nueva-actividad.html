@@ -1,0 +1,143 @@
+<section class="actividad-nueva-page">
+  <header class="actividad-header">
+    <h1>Registrar nueva actividad</h1>
+  </header>
+
+  <section class="actividad-card">
+    <h2 class="card-title">Crear Actividad</h2>
+
+    <form [formGroup]="form" (ngSubmit)="onSubmit()" novalidate>
+      <div class="alert" *ngIf="form.invalid && (form.dirty || form.touched)">
+        Todos los campos son obligatorios.
+      </div>
+
+      <div class="grid-campos">
+        <!-- Nombre de la actividad -->
+        <div class="campo">
+          <label>Nombre de la Actividad</label>
+          <input
+            type="text"
+            class="campo-input"
+            formControlName="nombre"
+            placeholder="Ej: Recolección de PET" />
+        </div>
+
+        <!-- Descripción -->
+        <div class="campo">
+          <label>Descripción</label>
+          <input
+            type="text"
+            class="campo-input"
+            formControlName="descripcion"
+            placeholder="Breve descripción" />
+        </div>
+
+        <!-- Fecha -->
+        <div class="campo">
+          <label>Fecha</label>
+          <input
+            type="date"
+            class="campo-input"
+            formControlName="fecha"
+            [min]="hoyISO" />
+          <div class="error-msg" *ngIf="f.fecha.touched && f.fecha.errors?.['pastDate']">
+            La fecha no puede ser anterior al día actual.
+          </div>
+        </div>
+
+        <!-- Usuario -->
+        <div class="campo">
+          <label>Usuario asignado</label>
+          <input
+            type="text"
+            class="campo-input"
+            formControlName="usuario"
+            placeholder="Nombre del estudiante" />
+        </div>
+
+        <!-- Equipo -->
+        <div class="campo">
+          <label>Equipo</label>
+          <input
+            type="text"
+            class="campo-input"
+            formControlName="equipo"
+            placeholder="Ej: Equipo Verde A" />
+        </div>
+
+        <!-- Programa -->
+        <div class="campo">
+          <label>Programa</label>
+          <input
+            type="text"
+            class="campo-input"
+            formControlName="programa"
+            placeholder="Separación de residuos plásticos" />
+        </div>
+
+        <!-- PET -->
+        <div class="campo">
+          <label>PET (kg)</label>
+          <input
+            type="number"
+            min="0"
+            step="0.1"
+            class="campo-input"
+            formControlName="pet"
+            placeholder="0" />
+          <div class="error-msg" *ngIf="f.pet.touched && f.pet.invalid">
+            Ingrese un valor válido para PET.
+          </div>
+        </div>
+
+        <!-- Papel -->
+        <div class="campo">
+          <label>Papel (kg)</label>
+          <input
+            type="number"
+            min="0"
+            step="0.1"
+            class="campo-input"
+            formControlName="papel"
+            placeholder="0" />
+          <div class="error-msg" *ngIf="f.papel.touched && f.papel.invalid">
+            Ingrese un valor válido para Papel.
+          </div>
+        </div>
+
+        <!-- Orgánicos -->
+        <div class="campo">
+          <label>Orgánicos (kg)</label>
+          <input
+            type="number"
+            min="0"
+            step="0.1"
+            class="campo-input"
+            formControlName="organicos"
+            placeholder="0" />
+          <div class="error-msg" *ngIf="f.organicos.touched && f.organicos.invalid">
+            Ingrese un valor válido para Orgánicos.
+          </div>
+        </div>
+
+        <!-- Observaciones -->
+        <div class="campo campo-observaciones">
+          <label>Observaciones</label>
+          <input
+            type="text"
+            class="campo-input"
+            formControlName="observaciones"
+            placeholder="Comentarios u observaciones" />
+        </div>
+      </div>
+
+      <div class="form-actions">
+        <button type="submit" class="btn-oscuro">Guardar</button>
+      </div>
+    </form>
+  </section>
+
+  <div class="toast" *ngIf="showToast">
+    Actividad registrada correctamente.
+  </div>
+</section>

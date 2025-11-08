@@ -1,0 +1,48 @@
+<section class="graficos-page">
+  <header class="graficos-header">
+    <button class="btn-oscuro" (click)="regresar()">Regresar</button>
+    <h1>Visualizaciones gráficas</h1>
+  </header>
+
+  <section class="graficos-layout">
+    <!-- Gráfico de barras -->
+    <article class="card-grafico">
+      <h2>Tabla de Actividades - Septiembre</h2>
+
+      <div class="chart-legend">
+        <span class="pill pill-pet">PET</span>
+        <span class="pill pill-papel">Papel</span>
+        <span class="pill pill-organicos">Orgánicos</span>
+        <span class="pill pill-otros">Otros</span>
+      </div>
+
+      <div class="chart-bars" *ngIf="actividades.length > 0; else sinDatos">
+        <div class="bar-item" *ngFor="let a of actividades">
+          <div class="bar-wrapper">
+            <!-- Una sola barra con altura según totalKg -->
+            <div class="bar-total" [style.height.%]="getAlturaBarra(a)"></div>
+          </div>
+          <div class="bar-label">
+            {{ a.fecha }}
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- Gráfico de líneas (placeholder de diseño) -->
+    <article class="card-grafico">
+      <h2>Tabla de Resumen por Semana y Mes</h2>
+
+      <div class="chart-placeholder">
+        Aquí podríamos mostrar un gráfico de líneas con el resumen semanal /
+        mensual usando las mismas actividades registradas.
+      </div>
+    </article>
+  </section>
+
+  <ng-template #sinDatos>
+    <p class="sin-datos">
+      Aún no hay actividades registradas para mostrar gráficos.
+    </p>
+  </ng-template>
+</section>

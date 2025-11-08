@@ -1,0 +1,85 @@
+.residuos-page {
+  background-color: #eaf7e3;
+  min-height: 100vh;
+  font-family: "Roboto", system-ui, sans-serif;
+  padding: 2rem;
+  color: #1a1a1a;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.residuos-header {
+  font-family: "Playfair Display", Georgia, serif;
+  margin-bottom: 2rem;
+}
+
+.residuos-header h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+}
+
+.residuos-header p {
+  color: #355e3b;
+  font-size: 1rem;
+}
+
+.residuos-card {
+  background-color: #f9fff5;
+  border: 1px solid #d8e6cb;
+  border-radius: 8px;
+  padding: 1.5rem 2rem;
+  width: 100%;
+  max-width: 600px;
+  text-align: left;
+  box-shadow: 0 2px 6px #00000012;
+}
+
+.residuos-card h2 {
+  font-size: 1.2rem;
+  color: #2c4f1f;
+  margin-bottom: 1rem;
+}
+
+.residuos-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.residuos-card li {
+  background-color: #e6f4dd;
+  margin-bottom: 0.6rem;
+  padding: 0.5rem 0.8rem;
+  border-radius: 4px;
+}
+
+.residuos-boton {
+  margin-top: 2rem;
+}
+
+.btn-oscuro {
+  background-color: #1f1f1f;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 0.7rem 1.5rem;
+  font-size: 0.95rem;
+  cursor: pointer;
+  box-shadow: 0 3px 6px #00000022;
+  transition: all 0.2s ease;
+}
+
+.btn-oscuro:hover {
+  background-color: #2e2e2e;
+  transform: scale(1.03);
+}
+
+.residuos-footer {
+  margin-top: auto;
+  font-size: 0.85rem;
+  color: #5c7058;
+  padding-top: 2rem;
+}

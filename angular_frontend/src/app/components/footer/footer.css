@@ -1,0 +1,81 @@
+.site-footer {
+  background: #4b8a45;         /* verde principal */
+  color: #f8f8f8;
+  padding: 40px 60px 28px;
+  font-family: "Times New Roman", Georgia, serif;
+}
+
+/* Parte superior en 4 columnas */
+.footer-top {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 56px;
+}
+
+.footer-column h3 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin: 0 0 8px;
+}
+
+.column-divider {
+  height: 2px;
+  background: #f8f8f8;
+  max-width: 260px;
+  margin-bottom: 16px;
+}
+
+.footer-column ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.footer-column li {
+  margin-bottom: 8px;
+  font-size: 0.98rem;
+}
+
+.footer-column a {
+  text-decoration: none;
+  color: #f8f8f8;
+}
+
+.footer-column a:hover {
+  text-decoration: underline;
+}
+
+/* Línea verde clara horizontal */
+.footer-middle-line {
+  height: 2px;
+  background: #9fe658;
+  margin: 32px 0 10px;
+}
+
+/* Texto ECOWORMS centrado */
+.footer-bottom {
+  text-align: center;
+  font-weight: 700;
+  letter-spacing: 0.25em;
+  font-size: 1.3rem;
+}
+
+/* Responsivo */
+@media (max-width: 1024px) {
+  .site-footer {
+    padding: 32px 24px 24px;
+  }
+  .footer-top {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    row-gap: 40px;
+  }
+}
+
+@media (max-width: 640px) {
+  .footer-top {
+    grid-template-columns: 1fr;
+  }
+  .footer-bottom {
+    font-size: 1.1rem;
+  }
+}
